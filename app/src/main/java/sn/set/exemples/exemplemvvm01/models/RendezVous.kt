@@ -1,5 +1,3 @@
-package sn.set.exemples.testretrofit_2.models
-
-import sn.set.exemples.testretrofit_2.models.RendezVousItem
+package sn.set.exemples.exemplemvvm01.models
 
 class RendezVous : ArrayList<RendezVousItem>()

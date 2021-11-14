@@ -1,11 +1,8 @@
-package sn.set.exemples.testretrofit_2.models
-
-
-import java.time.LocalDateTime
+package sn.set.exemples.exemplemvvm01.models
 
 data class RendezVousItem(
-//    var id: Int = 10000,
-    var description: String = "",
-    var lieu: String = "",
-    var date: String = LocalDateTime.now().toString()
+    val date: String,
+    val description: String,
+    val id: Int = 0,
+    val lieu: String,
 )

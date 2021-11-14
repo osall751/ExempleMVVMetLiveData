@@ -12,7 +12,6 @@ import androidx.databinding.DataBindingUtil
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.supervisorScope
-import sn.set.exemples.exemplemvvm01.MainActivity
 import sn.set.exemples.exemplemvvm01.R
 import sn.set.exemples.exemplemvvm01.api.RetrofitClient
 import sn.set.exemples.exemplemvvm01.api.RetrofitService
@@ -32,25 +31,25 @@ class LoginActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         initViews()
         loginService = RetrofitClient.getClient()
-        runBlocking {
-            getAllRendezVous()
-        }
+//        runBlocking {
+//            getAllRendezVous()
+//        }
     }
 
-    private suspend fun getAllRendezVous() {
-        supervisorScope {
-            launch {
-                val response = loginService.getAllRendezVous()
-                if (response.isSuccessful) {
-                    val rvsResponse = response.body()!!
-                    Log.i("### Osall ", rvsResponse.toString())
-//                    txtView.text = rvsResponse.toString()
-                } else {
-                    Log.i("### Osall ", response.errorBody().toString())
-                }
-            }
-        }
-    }
+//    private suspend fun getAllRendezVous() {
+//        supervisorScope {
+//            launch {
+//                val response = loginService.getAllRendezVous()
+//                if (response.isSuccessful) {
+//                    val rvsResponse = response.body()!!
+//                    Log.i("### Osall ", rvsResponse.toString())
+////                    txtView.text = rvsResponse.toString()
+//                } else {
+//                    Log.i("### Osall ", response.errorBody().toString())
+//                }
+//            }
+//        }
+//    }
 
     private fun initViews() {
         binding.loginViewModel = viewmodel
@@ -82,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val rvsResponse = response.body()!!
                     Log.i("### Osall ", rvsResponse.toString())
-                    val intent = Intent(this@LoginActivity,MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.putExtra("jwt",rvsResponse.jwt)
                     startActivity(intent)
                 } else {
