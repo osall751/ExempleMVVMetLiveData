@@ -1,3 +1,7 @@
 package sn.set.exemples.exemplemvvm01.models
 
-data class LoginUser(var email: String?, var password: String?)
+data class LoginUser(var identifier: String?, var password: String?)
+
+
+
+

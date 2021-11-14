@@ -43,7 +43,7 @@
                 android:hint="Email ?"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
-                android:text="@={loginViewModel.email}" />
+                android:text="@={loginViewModel.identifier}" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"

@@ -11,16 +11,16 @@ class LoginViewModel : ViewModel() {
     val loginUser: MutableLiveData<LoginUser>
         get() = _loginUser
 
-    private val _email = MutableLiveData<String>("Osall@univ-thies.sn")
-    val email: MutableLiveData<String>
-        get() = _email
+    private val _identifier = MutableLiveData<String>("Osall@univ-thies.sn")
+    val identifier: MutableLiveData<String>
+        get() = _identifier
 
-    private val _password = MutableLiveData<String>("Test")
+    private val _password = MutableLiveData<String>("1234567")
     val password: MutableLiveData<String>
         get() = _password
 
     fun login(v: View) {
-        val user = LoginUser(email.value, password.value)
+        val user = LoginUser(identifier.value, password.value)
         loginUser.value = user
     }
 }
